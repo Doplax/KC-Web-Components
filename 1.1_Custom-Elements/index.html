@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <hello-world></hello-world>
+
+    <script>
+        class HelloWorld extends HTMLElement {
+            constructor(){
+                super();
+            }
+
+            coannectedCallback(){
+                console.log("He entrado en el DOM");
+            }
+
+            discconectedCallback(){
+                console.log("He salido en el DOM");
+            }
+
+            attributeChangedCallback(){
+                
+            }
+        }
+
+    window.customElements.define('hello-world', HelloWorld)
+    </script>
+</body>
+</html>

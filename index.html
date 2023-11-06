@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <hello-world></hello-world>
+    <hello-world a="56" b="hola"></hello-world>
+
+
+    <script>
+        class HelloWorld extends HTMLElement {
+            constructor(){
+                super();
+            }
+
+            coannectedCallback(){
+                console.log("He entrado en el DOM");
+            }
+
+            discconectedCallback(){
+                console.log("He salido en el DOM");
+            }
+
+            static get observedAttributes() {
+              return ['a', 'b']
+            }
+
+            attributeChangedCallback(name, oldValue, newValue){
+              console.log(`El atributo ${name} fue modificado`);
+            }
+        }
+
+        window.customElements.define('hello-world', HelloWorld)
+
+    </script>
+</body>
+</html>
